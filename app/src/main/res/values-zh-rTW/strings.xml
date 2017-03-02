@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ChangeLanguage</string>
+    <string name="follow_system">隨系統</string>
+    <string name="simplified_chinese">简体</string>
+    <string name="traditional_chinese">繁體</string>
+    <string name="english">English</string>
+    <string name="text_setting">設定</string>
+    <string name="text_des">現在的系統語言</string>
+</resources>
