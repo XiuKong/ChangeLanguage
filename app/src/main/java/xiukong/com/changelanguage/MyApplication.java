@@ -1,6 +1,8 @@
 package xiukong.com.changelanguage;
 
+import android.app.Activity;
 import android.app.Application;
+import android.content.SharedPreferences;
 
 import xiukong.com.changelanguage.utils.LanguageUtil;
 
@@ -10,8 +12,17 @@ import xiukong.com.changelanguage.utils.LanguageUtil;
 
 public class MyApplication extends Application{
 
+    SharedPreferences sharedPreferences;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        initLanguage();
+    }
+
+    private void initLanguage() {
+        sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        int languageType = sharedPreferences.getInt("LanguageType",LanguageUtil.FOLLOW_SYSTEM);
+        LanguageUtil.changeAppLanguage(getResources(),languageType);
     }
 }
